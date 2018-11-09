@@ -1,5 +1,5 @@
-const title = "Spice and Rice | Premium Indian restaraunt",
-  description = 'Spice and rice is a family run restaraunt, serving up dozens of favourite dishes, mixing a unique blend of spices to bring the ultimate taste sensation'
+const title = "Site Name | A basic Nuxt starter",
+  description = 'A basic Nuxt starter template'
 export default {
     head: {
         htmlAttrs: {

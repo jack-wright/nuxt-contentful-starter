@@ -1,0 +1,40 @@
+/* Mix of both resetting and normalising the stylesheets (Normalize package not used) */
+* {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+
+}
+
+h1,
+h2,
+h3 {
+    color: $black;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+p,
+li,
+a {
+    font-size: 1.6rem;
+}

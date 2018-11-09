@@ -1,0 +1,48 @@
+.c-nav {
+    $this: &;
+
+    width: 100%;
+
+    &__links {
+        align-items: center;
+        display: flex;
+        list-style: none;
+    }
+
+    &__logo {
+        background-color: $black;
+        border-radius: 50%;    
+        height: 50px;
+        margin-right: auto;
+        width: 50px;
+    }
+
+    &__item {
+        margin: 0 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        #{$this}__link {
+            &--active {
+                border-bottom: 2px solid $black;
+            }       
+        }
+
+        &--brand {
+            margin-right: auto;
+
+            &--active {
+                #{$this}__link {
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    &__link {
+        color: $black;
+        text-decoration: none;
+    }
+}

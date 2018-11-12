@@ -22,16 +22,14 @@ export default {
         linkActiveClass: 'c-nav__link--active'
     },
 
-    plugins: [
-        'contentful'
-    ],
+    plugins: [],
 
     generate: {
         dir: 'public'
     },
 
     env: {
-        CONTENTFUL_SPACE_ID: 'k97mn349xsyq',
-        CONTENTFUL_CDA_ACCESS_TOKEN: 'c48450de5a51c8682545309331bef42ccd04f6a2d41ee939747c9bf12c0b0bd8'
+        CONTENTFUL_SPACE_ID: 'INSERT SPACE ID HERE',
+        CONTENTFUL_CDA_ACCESS_TOKEN: 'INSERT ACCESS TOKEN HERE'
     }
 }

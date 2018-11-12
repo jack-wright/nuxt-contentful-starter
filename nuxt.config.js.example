@@ -26,5 +26,10 @@ export default {
 
     generate: {
         dir: 'public'
+    },
+
+    env: {
+        CONTENTFUL_SPACE_ID: 'INSERT SPACE ID HERE',
+        CONTENTFUL_CDA_ACCESS_TOKEN: 'INSERT ACCESS TOKEN HERE'
     }
 }

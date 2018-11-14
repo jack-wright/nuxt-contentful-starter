@@ -1,6 +1,5 @@
 node_modules/
 public/
 .nuxt/
-nuxt.config.js
 .vagrant
 Vagrantfile

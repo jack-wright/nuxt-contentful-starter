@@ -2,14 +2,34 @@ import { createClient } from '@/plugins/contentful'
 
 const client = createClient()
 const api = {
-	 async get(clientID) {
+	 async getPage(clientID) {
 		try {
-			let response = await client.getEntry(clientID)
-			return await response
+			return await client.getEntry(clientID)
 		} catch(error) {
 			console.log(error)
 		}
-	}
+	},
+
+	async getPosts(title = null) {
+		try {
+			let args = {
+				content_type: 'blogPost',
+				...(title ? {'fields.title': title} : {})
+			}
+
+			return await client.getEntries(args)
+		} catch(error) {
+			console.log(error)
+		}
+	},
+
+	async getAllPages() {
+		try {
+			return await client.getEntries({})
+		} catch(error) {
+			console.log(error)
+		}
+	},
 }
 
 export default api

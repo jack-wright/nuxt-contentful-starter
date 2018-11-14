@@ -1,19 +1,18 @@
 .c-nav {
-    $this: &;
+	$this: &;
 
     width: 100%;
 
     &__links {
-        align-items: center;
+		align-items: center;
         display: flex;
         list-style: none;
     }
 
     &__logo {
-        background-color: $black;
-        border-radius: 50%;    
+        background-color: $secondary-font-color;
+        border-radius: 50%;
         height: 50px;
-        margin-right: auto;
         width: 50px;
     }
 
@@ -26,13 +25,11 @@
 
         #{$this}__link {
             &--active {
-                border-bottom: 2px solid $black;
-            }       
+                border-bottom: 2px solid $secondary-font-color;
+            }
         }
 
         &--brand {
-            margin-right: auto;
-
             &--active {
                 #{$this}__link {
                     border: 0;
@@ -42,7 +39,7 @@
     }
 
     &__link {
-        color: $black;
+		color: $secondary-font-color;
         text-decoration: none;
     }
 }

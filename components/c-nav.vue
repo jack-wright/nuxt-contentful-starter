@@ -6,16 +6,27 @@
                     <nuxt-link 
                         to="/" 
                         title="The home page of the site"
-                        class="c-nav__link">
+                        class="c-nav__link"
+                        exact>
                         <div class="c-nav__logo"></div>
+                    </nuxt-link>
+                </li>
+                <!-- Todmorden has a home link as well as the logo that goes back to home-->
+                <li class="c-nav__item">
+                    <nuxt-link 
+                        to="/" 
+                        title="The home page of the site"
+                        class="c-nav__link"
+                        exact>
+                        Home
                     </nuxt-link>
                 </li>
                 <li class="c-nav__item">
                     <nuxt-link 
-                        to="/about"
-                        title="About the site"
+                        to="/news-and-events"
+                        title="The latest news and events for the site"
                         class="c-nav__link">
-                        About
+                        News &amp; Events
                     </nuxt-link>
                 </li>
                 <li class="c-nav__item">

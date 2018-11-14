@@ -1,7 +1,7 @@
 <template>
     <div>
         <navigation/>
-        <main>
+        <main class="c-container">
             <nuxt/>
         </main>
     </div>

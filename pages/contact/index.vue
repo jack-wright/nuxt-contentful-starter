@@ -21,11 +21,13 @@
 export default {
     computed: {
         pageData() {
-            return this.$store.state.page.pageData.fields
+            return this.$store.state.page.pageData.contact.fields
         }
     },
     async fetch({ store }) {
-        await store.dispatch('page/getPageData', '2Znj4QVQz68Ioi0oSAOesM')
+        if (!store.state.page.pageData.hasOwnProperty('contact')) {
+            await store.dispatch('page/getPageData', {id: '2Znj4QVQz68Ioi0oSAOesM', page: 'contact'})
+        }
     }
 }
 </script>

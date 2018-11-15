@@ -14,11 +14,13 @@
 export default {
     computed: {
         posts() {
-            return this.$store.state.posts.posts.items
+            return this.$store.state.posts.posts
         }
     },
     async fetch({ store }) {
-        await store.dispatch('posts/getPosts')
+        if(!store.state.posts.posts.length > 0) {
+            await store.dispatch('posts/getPosts')
+        }
     }
 }
 </script>

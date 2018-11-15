@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import navigation from '@/components/c-nav.vue';
+import navigation from '@/components/c-header.vue';
 export default {
     components: {
         navigation

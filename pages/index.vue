@@ -16,27 +16,34 @@
         </div>
     </div>
     <section class="c-page__section s-page c-container">
-        <p 
-            v-for="(paragraph, index) in pageData.body.content"
-            :key="index"
-            class="c-page__section">
-            {{ paragraph.content[0].value }}
-        </p>
+       <div v-html="bodyContent"></div>
     </section>
 </div>
 </template>
 
 <script>
 import contentful from '@/services/contentful/api'
+import { BLOCKS } from '@contentful/rich-text-types'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 
 export default {
     computed: {
         pageData() {
-            return this.$store.state.page.pageData.fields
+            return this.$store.state.page.pageData.home.fields
+        },
+        bodyContent() {
+            const options = {
+                renderNode: {
+                    [BLOCKS.EMBEDDED_ASSET]: (node) => `<img src="${node.data.target.fields.file.url}">`
+                }
+            }
+            return documentToHtmlString(this.pageData.body, options)
         }
     },
     async fetch({ store }) {
-        await store.dispatch('page/getPageData', '4ix0SohEOIU0EOAKuQSusY')
+        if (!store.state.page.pageData.hasOwnProperty('home')) {
+            await store.dispatch('page/getPageData', {id: '4ix0SohEOIU0EOAKuQSusY', page: 'home'})
+        }
     }
 }
 </script>

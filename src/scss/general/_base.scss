@@ -14,7 +14,8 @@ body {
 h1,
 h2,
 h3 {
-    color: $black;
+    color: $primary-font-color;
+    font-family: $secondary-font;
 }
 
 h1 {
@@ -32,5 +33,14 @@ h3 {
 p,
 li,
 a {
+    color: $primary-font-color;
     font-size: 1.6rem;
+    font-family: $primary-font;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .4s
+}
+.page-enter, .page-leave-active {
+  opacity: 0
 }

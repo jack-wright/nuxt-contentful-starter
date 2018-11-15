@@ -35,8 +35,5 @@ export default {
         CONTENTFUL_CDA_ACCESS_TOKEN: 'c48450de5a51c8682545309331bef42ccd04f6a2d41ee939747c9bf12c0b0bd8'
     },
 
-    loading: {
-        color: 'white',
-        height: '2px'
-    }
+    loading: false
 }

@@ -9,6 +9,10 @@
         display: flex;
         list-style: none;
 
+        &:last-child {
+            margin-right: 0;
+        }
+
         &-legal {
             display: none;
         }
@@ -23,10 +27,6 @@
 
     &__item {
         margin: 0 10px;
-
-        &:last-child {
-            margin-right: 0;
-        }
 
         #{$this}__link {
             &--active {

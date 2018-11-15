@@ -13,6 +13,6 @@ export const mutations = {
 export const actions = {
 	async getPosts({commit}) {
 		const data = await contentful.getPosts()
-		commit('setPosts', data)
+		commit('setPosts', data.items)
 	}
 }

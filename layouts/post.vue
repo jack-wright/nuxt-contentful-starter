@@ -1,14 +1,14 @@
 <template>
     <div>
         <navigation/>
-        <main class="c-container">
+        <main>
             <nuxt/>
         </main>
     </div>
 </template>
 
 <script>
-import navigation from '@/components/c-nav.vue';
+import navigation from '@/components/c-header.vue';
 export default {
     components: {
         navigation

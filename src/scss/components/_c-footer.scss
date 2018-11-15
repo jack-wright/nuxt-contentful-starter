@@ -1,0 +1,21 @@
+.c-footer {
+    background-color: $theme-color;
+    padding: $horizontal-padding;
+
+    .c-nav {
+        display: flex;
+
+        &__links {
+            align-items: flex-start;
+            flex-direction: column;
+
+            &-legal {
+                display: block;
+            }
+        }
+
+        &__item {
+            margin-bottom: 1rem;
+        }
+    }
+}

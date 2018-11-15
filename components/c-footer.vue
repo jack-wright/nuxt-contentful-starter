@@ -1,15 +1,14 @@
 <template>
-	<div class="c-footer">
-
-	</div>
+    <footer class="c-footer">
+        <navigation-menu />
+    </footer>
 </template>
 
 <script>
-	export default {
-		
-	}
+import navigationMenu from '@/components/c-nav.vue';
+export default {
+    components: {
+        navigationMenu
+    }
+}
 </script>
-
-<style scoped>
-
-</style>

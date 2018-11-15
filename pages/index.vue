@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import contentful from '@/services/contentful/api'
 import { BLOCKS } from '@contentful/rich-text-types'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 

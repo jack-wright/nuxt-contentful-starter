@@ -23,7 +23,7 @@ export default {
     },
 
     plugins: [
-        'contentful'
+        '@/plugins/contentful'
     ],
 
     generate: {

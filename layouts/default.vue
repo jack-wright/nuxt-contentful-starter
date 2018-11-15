@@ -1,17 +1,21 @@
 <template>
     <div>
-        <navigation/>
+        <header-section/>
         <main>
             <nuxt/>
         </main>
+        <footer-section/>
     </div>
 </template>
 
 <script>
-import navigation from '@/components/c-header.vue';
+import headerSection from '@/components/c-header.vue'
+import footerSection from '@/components/c-footer.vue'
+
 export default {
     components: {
-        navigation
+        headerSection,
+        footerSection
     }
 }
 </script>

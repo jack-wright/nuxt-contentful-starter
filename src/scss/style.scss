@@ -1,7 +1,12 @@
 @import 'general/variables';
+
 @import 'general/base';
+
+@import 'components/c-blog-posts';
 @import 'components/c-container';
 @import 'components/c-header';
 @import 'components/c-nav';
 @import 'components/c-page';
+@import 'components/c-footer';
+
 @import 'scope/s-page';

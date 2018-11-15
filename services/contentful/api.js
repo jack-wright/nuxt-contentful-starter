@@ -10,11 +10,11 @@ const api = {
 		}
 	},
 
-	async getPosts(title = null) {
+	async getPosts(slug = null) {
 		try {
 			let args = {
 				content_type: 'blogPost',
-				...(title ? {'fields.title': title} : {})
+				...(slug ? {'fields.slug': slug} : {})
 			}
 
 			return await client.getEntries(args)

@@ -1,0 +1,27 @@
+.c-blog-posts {
+    margin: 3.6rem auto;
+    width: 660px;
+
+    &__info {
+        margin-bottom: 3.6rem;
+    }
+
+    &__section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2.4rem;
+    }
+
+    &__preview {
+        img {
+            width: 100%;
+        }
+    }
+
+    &__button {
+        &::before {
+            content: '<';
+            display: inline-block;
+        }
+    }
+}

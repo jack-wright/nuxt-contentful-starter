@@ -11,7 +11,7 @@ export const mutations = {
 }
 
 export const actions = {
-	async getPostByTitle({commit}, payload) {
+	async getPostBySlug({commit}, payload) {
 		const data = await contentful.getPosts(payload)
 		commit('setCurrentPost', data.items[0])
 	}

@@ -16,7 +16,8 @@
     "@contentful/rich-text-html-renderer": "^10.0.1",
     "contentful": "^7.0.5",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "nuxt": "^2.2.0"
+    "nuxt": "^2.2.0",
+    "simple-cookie-consent": "^0.1.8"
   },
   "devDependencies": {
     "node-sass": "^4.9.4",

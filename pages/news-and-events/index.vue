@@ -1,11 +1,13 @@
 <template>
 <div>
-    <img
-        class="c-page__featured-image"
-        :src="pageData.featuredImage.fields.file.url"
-        :alt="pageData.featuredImage.fields.description"
-        :title="pageData.featuredImage.fields.title">
-    <div class="c-blog-posts"> 
+    <figure class="c-page__featured-image-container">
+        <img
+            class="c-page__featured-image"
+            :src="pageData.featuredImage.fields.file.url"
+            :alt="pageData.featuredImage.fields.description"
+            :title="pageData.featuredImage.fields.title">
+    </figure>
+    <div class="c-blog-posts c-container"> 
         <section class="c-blog-posts__info">
             <h1>{{ pageData.title }}</h1>
             <p>{{ pageData.introduction }}</p>

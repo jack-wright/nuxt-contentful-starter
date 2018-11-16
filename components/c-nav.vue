@@ -6,7 +6,11 @@
 				title="The home page of the site"
 				class="c-nav__link"
 				exact>
-				<div class="c-nav__logo"></div>
+				<img 
+					src="@/assets/brand.png"
+					class="c-nav__logo"
+					alt="generic brand logo"
+					title="brand logo">
 			</nuxt-link>
 		</div>
 		<ul class="c-nav__links">

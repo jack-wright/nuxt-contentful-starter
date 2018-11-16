@@ -1,10 +1,12 @@
 <template>
 <div>
-    <img
-        class="c-page__featured-image"
-        :src="pageData.featureImage.fields.file.url"
-        :alt="pageData.featureImage.fields.description"
-        :title="pageData.featureImage.fields.title">
+    <figure class="c-page__featured-image-container">
+        <img
+            class="c-page__featured-image"
+            :src="pageData.featureImage.fields.file.url"
+            :alt="pageData.featureImage.fields.description"
+            :title="pageData.featureImage.fields.title">
+    </figure>
     <section class="c-page__section s-page c-container">
         <h1>{{ pageData.title }}</h1>
         <div v-html="bodyContent"></div>

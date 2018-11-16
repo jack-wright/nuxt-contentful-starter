@@ -1,11 +1,13 @@
 <template>
 <div>
     <div class="c-page__featured-section">
-        <img
-            class="c-page__featured-image"
-            :src="pageData.featuredImage.fields.file.url"
-            :alt="pageData.featuredImage.fields.description"
-            :title="pageData.featuredImage.fields.title">
+        <figure class="c-page__featured-image-container">
+            <img
+                class="c-page__featured-image"
+                :src="pageData.featuredImage.fields.file.url"
+                :alt="pageData.featuredImage.fields.description"
+                :title="pageData.featuredImage.fields.title">
+        </figure>
         <div class="c-page__introduction">
             <img
                 class="c-page__brand-logo"

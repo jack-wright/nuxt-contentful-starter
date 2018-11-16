@@ -4,6 +4,10 @@
 
     .c-nav {
         display: flex;
+        
+        &__brand {
+            margin: 0 6.4rem 0 0;
+        }
 
         &__links {
             align-items: flex-start;

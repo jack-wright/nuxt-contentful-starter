@@ -11,12 +11,12 @@ const api = {
 	},
 
 	async getPosts(slug = null) {
+		let args = {
+			content_type: 'blogPost',
+			...(slug ? {'fields.slug': slug} : {})
+		}
+		
 		try {
-			let args = {
-				content_type: 'blogPost',
-				...(slug ? {'fields.slug': slug} : {})
-			}
-
 			return await client.getEntries(args)
 		} catch(error) {
 			console.log(error)

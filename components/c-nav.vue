@@ -14,7 +14,6 @@
 			</nuxt-link>
 		</div>
 		<ul class="c-nav__links">
-			<!-- Todmorden has a home link as well as the logo that goes back to home-->
 			<li class="c-nav__item">
 				<nuxt-link 
 					to="/" 
@@ -26,10 +25,10 @@
 			</li>
 			<li class="c-nav__item">
 				<nuxt-link 
-					to="/news-and-events"
+					to="/news"
 					title="The latest news and events for the site"
 					class="c-nav__link">
-					News &amp; Events
+					News
 				</nuxt-link>
 			</li>
 			<li class="c-nav__item">
@@ -40,24 +39,26 @@
 					Contact
 				</nuxt-link>
 			</li>
-			<div class="c-nav__links-legal">
-				<li class="c-nav__item">
-					<nuxt-link 
-						to="/privacy-policy"
-						title="Privacy policy document for this site"
-						class="c-nav__link">
-						Privacy policy
-					</nuxt-link>
-				</li>
-				<li class="c-nav__item">
-					<nuxt-link
-						to="/terms-and-conditions"
-						title="Terms and conditions for using this site"
-						class="c-nav__link">
-						Terms &amp; conditions
-					</nuxt-link>
-				</li>
-			</div>
+			<li class="c-nav__links-legal">
+				<ul>
+					<li class="c-nav__item">
+						<nuxt-link 
+							to="/privacy-policy"
+							title="Privacy policy document for this site"
+							class="c-nav__link">
+							Privacy policy
+						</nuxt-link>
+					</li>
+					<li class="c-nav__item">
+						<nuxt-link
+							to="/terms-and-conditions"
+							title="Terms and conditions for using this site"
+							class="c-nav__link">
+							Terms &amp; conditions
+						</nuxt-link>
+					</li>
+				</ul>
+			</li>
 		</ul>
 	</nav>
 </template>

@@ -1,13 +1,8 @@
 <template>
 <div>
     <div class="c-page__featured-section">
-        <figure class="c-page__featured-image-container">
-            <img
-                class="c-page__featured-image"
-                :src="pageData.featuredImage.fields.file.url"
-                :alt="pageData.featuredImage.fields.description"
-                :title="pageData.featuredImage.fields.title">
-        </figure>
+        <feature-image
+            :image="pageData.featuredImage" />
         <div class="c-page__introduction">
             <img
                 class="c-page__brand-logo"
@@ -17,28 +12,27 @@
             <h1 class="c-page__heading">{{ pageData.introductionMessage }}</h1>
         </div>
     </div>
-    <section class="c-page__section s-page c-container">
-       <div v-html="bodyContent"></div>
-    </section>
+    <copy-block
+        :content="bodyContent"/>
 </div>
 </template>
 
 <script>
-import { BLOCKS } from '@contentful/rich-text-types'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import copyBlock from '@/components/c-copy-block'
+import featureImage from '@/components/c-hero-image'
+import helpers from '@/services/helpers'
 
 export default {
+    components: {
+        copyBlock,
+        featureImage
+    },
     computed: {
         pageData() {
             return this.$store.state.page.pageData.home.fields
         },
         bodyContent() {
-            const options = {
-                renderNode: {
-                    [BLOCKS.EMBEDDED_ASSET]: (node) => `<img src="${node.data.target.fields.file.url}">`
-                }
-            }
-            return documentToHtmlString(this.pageData.body, options)
+            return helpers.contentDisplay(this.pageData.body)
         }
     },
     async fetch({ store }) {

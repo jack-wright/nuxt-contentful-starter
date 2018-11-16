@@ -1,6 +1,6 @@
 <template>
 <div>
-    <section class="c-page__section s-page c-container">
+    <section class="c-page__section s-page">
         <h1>{{ pageData.title }}</h1>
         <div v-html="bodyContent"></div>
     </section>
@@ -8,9 +8,7 @@
 </template>
 
 <script>
-import contentful from '@/services/contentful/api'
-import { BLOCKS } from '@contentful/rich-text-types'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import helpers from '@/services/helpers'
 
 export default {
     computed: {
@@ -18,12 +16,12 @@ export default {
             return this.$store.state.page.pageData.termsAndConditions.fields
         },
         bodyContent() {
-            return documentToHtmlString(this.pageData.body)
+            return helpers.contentDisplay(this.pageData.body)
         }
     },
     async fetch({ store }) {
         if (!store.state.page.pageData.hasOwnProperty('termsAndConditions')) {
-            await store.dispatch('page/getPageData', {id: '2KDk0SWyJOqgq2O0o4W80q', page: 'termsAndConditions'})
+            await store.dispatch('page/getPageData', {id: '2jPimAoKFeComMC4OGyM6e', page: 'termsAndConditions'})
         }
     }
 }

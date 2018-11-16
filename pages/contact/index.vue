@@ -7,8 +7,9 @@
             :alt="pageData.featureImage.fields.description"
             :title="pageData.featureImage.fields.title">
     </figure>
-    <section class="c-page__section s-page c-container">
+    <section class="c-page__section s-page">
         <h1>{{ pageData.title }}</h1>
+
         <div v-html="bodyContent"></div>
     </section>
 </div>

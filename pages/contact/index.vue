@@ -1,33 +1,31 @@
 <template>
 <div>
-    <img
-        class="c-page__featured-image"
-        :src="pageData.featureImage.fields.file.url"
-        :alt="pageData.featureImage.fields.description"
-        :title="pageData.featureImage.fields.title">
-    <section class="c-page__section s-page c-container">
-        <h1>{{ pageData.title }}</h1>
-        <div v-html="bodyContent"></div>
-    </section>
+    <ui-image 
+        v-if="pageData.featureImage"
+        imageClass="c-page__image"
+        :image="pageData.featureImage"
+        :feature="true" />
+    <div class="c-page__section l-container">
+        <copy-block
+            :title="pageData.title"
+            :content="pageData.body"
+            :form="pageData.form" />
+    </div>
 </div>
 </template>
 
 <script>
-import { BLOCKS } from '@contentful/rich-text-types'
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import copyBlock from '@/components/c-copy-block'
+import UiImage from '@/components/UI/c-image'
 
 export default {
+    components: {
+        copyBlock,
+        UiImage
+    },
     computed: {
         pageData() {
             return this.$store.state.page.pageData.contact.fields
-        },
-        bodyContent() {
-            const options = {
-                renderNode: {
-                    [BLOCKS.EMBEDDED_ASSET]: (node) => `<img src="${node.data.target.fields.file.url}">`
-                }
-            }
-            return documentToHtmlString(this.pageData.body, options)
         }
     },
     async fetch({ store }) {

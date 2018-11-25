@@ -1,14 +1,33 @@
+// Site colors
 $green: #00b585;
 $grey: #d0d0d0;
 $black: #212b36;
 $dark-grey: #333333;
 $white: #fff;
+$grey-light: #ccc;
+$grey-lighter: #f5f5f5;
 
-$padding: 2.5rem;
-
+// Main colors
 $theme-color: $dark-grey;
 $primary-font-color: $dark-grey;
 $secondary-font-color: $white;
 
+// Typefaces
 $primary-font: 'Montserrat', sans-serif;
 $secondary-font: 'Alegreya', serif;
+
+// Font sizes
+$text-small: 1.2rem;
+$text-regular: 1.6rem;
+$text-medium: 2rem;
+$text-large: 2.4rem;
+$text-x-large: 3rem;
+$text-xx-large: 3.6rem;
+$text-xxx-large: 4.8rem;
+
+//Breakpoints
+$small: 540px;
+$medium: 768px;
+$large: 1024px;
+$x-large: 1280px;
+$xx-large: 1600px;

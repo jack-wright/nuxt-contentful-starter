@@ -1,17 +1,24 @@
-const title = "Site Name | A basic Nuxt starter",
-  description = 'A basic Nuxt starter template'
+const title = 'Site name | A basic Nuxt starter',
+    description = 'A basic Nuxt starter template',
+    shortName = 'Site name'
+
 export default {
+    modules: [
+        '@nuxtjs/pwa'
+    ],
+
     head: {
-        htmlAttrs: {
-            lang: 'en'
-        },
-        title: title,
         meta: [
-            {'charset': 'UTF-8'},
-            {'name': 'viewport', 'content': 'width=device-width', 'initial-scale': '1.0'},
-            {'http-equiv': 'X-UA-Compatible', 'content': 'ie=edge'},
-            {'name': 'description', 'content': description}
+            {'http-equiv': 'X-UA-Compatible', 'content': 'ie=edge'}
         ]
+    },
+
+    manifest: {
+        'name': title,
+        'short_name': shortName,
+        'description': description,
+        'theme_color': '#333',
+        'lang': 'en'
     },
 
     css: [
@@ -22,7 +29,9 @@ export default {
         linkActiveClass: 'c-nav__link--active'
     },
 
-    plugins: [],
+    plugins: [
+        '@/plugins/contentful'
+    ],
 
     generate: {
         dir: 'public'
@@ -30,6 +39,7 @@ export default {
 
     env: {
         CONTENTFUL_SPACE_ID: 'INSERT SPACE ID HERE',
-        CONTENTFUL_CDA_ACCESS_TOKEN: 'INSERT ACCESS TOKEN HERE'
+        CONTENTFUL_CDA_ACCESS_TOKEN: 'INSERT ACCESS TOKEN HERE',
+        CONTACT_EMAIL_ADDRESS: 'INSERT CONTACT EMAIL ADDRESS HERE'
     }
 }

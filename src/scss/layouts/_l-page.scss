@@ -1,0 +1,21 @@
+.l-page {
+	&--contact {
+		display: block;
+		margin-bottom: 2rem;
+		width: 100%;
+
+		@media (min-width: $medium) {
+			display: grid;
+			grid-gap: 8rem;
+			grid-template-columns: 1fr 1fr;
+			margin-bottom: 0;
+		}
+
+		@media (min-width: $x-large) {
+			display: grid;
+			grid-gap: 14rem;
+			grid-template-columns: 1fr 1fr;
+			margin-bottom: 0;
+		}
+	}
+}

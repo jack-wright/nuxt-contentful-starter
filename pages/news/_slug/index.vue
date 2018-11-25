@@ -1,34 +1,31 @@
 <template>
 <div>
-    <feature-image
-        :image="post.featuredImage" />
-    <copy-block
-        :title="post.title"
-        :content="bodyContent" />
-    <nuxt-link
-        to="/news"
-        class="c-blog-posts__button">
-        Back
-    </nuxt-link>
+    <ui-image
+        v-if="post.featuredImage"
+        imageClass="c-page__image"
+        :image="post.featuredImage"
+        :feature="true" />
+    <div class="c-page__section l-container">
+        <copy-block
+            :title="post.title"
+            :content="post.body"
+            :backLink="'/news'" />
+    </div>
 </div>
 </template>
 
 <script>
-import featureImage from '@/components/c-hero-image'
 import copyBlock from '@/components/c-copy-block'
-import helpers from '@/services/helpers'
+import UiImage from '@/components/UI/c-image'
 
 export default {
     components: {
         copyBlock,
-        featureImage
+        UiImage
     },
     computed: {
         post() {
             return this.$store.state.post.currentPost.fields
-        },
-        bodyContent() {
-            return helpers.contentDisplay(this.post.body)
         }
     },
     async fetch({ store, params }) {

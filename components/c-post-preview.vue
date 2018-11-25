@@ -1,9 +1,7 @@
 <template>
 	<div class="c-blog-posts__preview">
-		<img 
-			:src="post.fields.featuredImage.fields.file.url" 
-			:alt="post.fields.featuredImage.fields.description"
-			:title="post.fields.featuredImage.fields.title">
+		<ui-image
+			:image="post.fields.featuredImage" />
 		<nuxt-link :to="`/news/${post.fields.slug}`">
 			<h3>{{ post.fields.title }}</h3>
 		</nuxt-link>
@@ -11,7 +9,13 @@
 </template>
 
 <script>
+import UiImage from '@/components/UI/c-image'
+
 export default {
+	components: {
+		UiImage
+	},
+
 	props: [
 		'post'
 	]

@@ -1,4 +1,62 @@
 .c-header {
     background-color: $theme-color;
-    padding: 1.5rem $padding;
+    display: flex;
+    padding: 1.5rem 2.5rem;
+
+    .c-nav {
+        opacity: 0;
+        transition: opacity .1s ease-in-out;
+
+        @media (min-width: $medium) {
+            opacity: 1;
+        }
+    }
+
+    .menu-is-open & {
+        .c-nav {
+            background: $theme-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            opacity: 1;
+
+            @media (min-width: $medium) {
+                background: none;
+                position: relative;
+            }
+
+            &__menu {
+                display: block;
+                margin-top: 7rem;
+                text-align: center;
+
+                @media (min-width: $medium) {
+                    display: flex;
+                    margin: 0;
+                }
+            }
+
+            &__item {
+                margin-bottom: 2rem;
+
+                @media (min-width: $medium) {
+                    margin-bottom: 0;
+                }
+            }
+
+            &__link {
+                color: $secondary-font-color;
+            }
+
+            &__brand {
+                z-index: 2;
+            }
+        }
+    }
 }

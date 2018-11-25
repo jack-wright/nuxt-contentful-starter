@@ -1,25 +1,30 @@
 .c-footer {
     background-color: $theme-color;
-    padding: $padding;
+    display: block;
+    padding: 2.5rem;
+
+    @media (min-width: $medium) {
+        display: flex;
+    }
 
     .c-nav {
-        display: flex;
-        
+        display: block;
+        margin-top: 1.6rem;
+
+        @media (min-width: $medium) {
+            margin-top: 0;
+        }
+
         &__brand {
             margin: 0 6.4rem 0 0;
         }
 
-        &__links {
-            align-items: flex-start;
-            flex-direction: column;
-
-            &-legal {
-                display: block;
-            }
+        &__menu {
+            display: block;
         }
 
         &__item {
-            margin-bottom: 1rem;
+            margin: 0 0 1rem;
         }
     }
 }

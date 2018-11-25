@@ -2,34 +2,38 @@
 	$this: &;
 
     display: flex;
-    width: 100%;
+    width: auto;
 
-    &__links {
-		align-items: center;
-        display: flex;
+    &__menu {
+        align-items: center;
         list-style: none;
+        display: none;
+
+        @media (min-width: $medium) {
+            display: flex;
+        }
 
         &:last-child {
             margin-right: 0;
         }
-
-        &-legal {
-            display: none;
-            margin-top: 1.2rem;
-        }
     }
 
     &__logo {
-        height: auto;
-        width: 5rem;
+        cursor: pointer;
+        height: 2.5rem;
+        width: auto;
+
+        @media (min-width: $medium) {
+            height: 3.5rem;
+        }
     }
 
     &__item {
-        margin: 0 10px;
+        margin: 0 1.6rem;
 
         #{$this}__link {
             &--active {
-                border-bottom: 2px solid $secondary-font-color;
+                border-bottom: .2rem solid $secondary-font-color;
             }
         }
     }
@@ -41,5 +45,11 @@
     &__link {
 		color: $secondary-font-color;
         text-decoration: none;
+    }
+
+    &__legal {
+        display: block;
+        margin-top: 2.5rem;
+        list-style: none;
     }
 }

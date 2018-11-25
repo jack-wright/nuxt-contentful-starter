@@ -1,22 +1,30 @@
 <template>
-<div>    
-    <section class="c-page__section s-page">
-        <h1>{{ pageData.title }}</h1>
-        <div v-html="bodyContent"></div>
-    </section>
+<div>
+    <ui-image 
+        v-if="pageData.featureImage"
+        imageClass="c-page__image"
+        :image="pageData.featureImage"
+        :feature="true" />
+    <div class="c-page__section l-container">
+        <copy-block
+            :title="pageData.title"
+            :content="pageData.body" />
+    </div>
 </div>
 </template>
 
 <script>
-import helpers from '@/services/helpers'
+import copyBlock from '@/components/c-copy-block'
+import UiImage from '@/components/UI/c-image'
 
 export default {
+    components: {
+        copyBlock,
+        UiImage
+    },
     computed: {
         pageData() {
             return this.$store.state.page.pageData.privacyPolicy.fields
-        },
-        bodyContent() {
-            return helpers.contentDisplay(this.pageData.body)
         }
     },
     async fetch({ store }) {

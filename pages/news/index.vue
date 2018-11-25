@@ -1,11 +1,15 @@
 <template>
 <div>
-    <feature-image 
-        :image="pageData.featureImage"/>
-    <div class="c-blog-posts"> 
-        <copy-block 
+    <ui-image 
+        v-if="pageData.featureImage"
+        imageClass="c-page__image"
+        :image="pageData.featureImage" 
+        :feature="true" /> 
+    <div class="c-page__section l-container">
+        <copy-block
+            class="c-page__section--archive"
             :title="pageData.title"
-            :content="bodyContent"/>
+            :content="pageData.body"/>
         <section class="c-blog-posts__section">
             <post-preview
                 v-for="(post, index) in posts"
@@ -17,23 +21,19 @@
 </template>
 
 <script>
-import featureImage from '@/components/c-hero-image'
 import postPreview from '@/components/c-post-preview'
 import copyBlock from '@/components/c-copy-block'
-import helpers from '@/services/helpers'
+import UiImage from '@/components/UI/c-image'
 
 export default {
     components: {
         copyBlock,
-        featureImage,
+        UiImage,
         postPreview
     },
     computed: {
         pageData() {
             return this.$store.state.page.pageData.news.fields
-        },
-        bodyContent() {
-            return helpers.contentDisplay(this.pageData.body)
         },
         posts() {
             return this.$store.state.posts.posts

@@ -3,3 +3,4 @@ public/
 .nuxt/
 .vagrant
 Vagrantfile
+.DS_Store
